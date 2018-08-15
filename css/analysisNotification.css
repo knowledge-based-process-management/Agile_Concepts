@@ -1,0 +1,44 @@
+body {
+
+}
+
+.breadcrumb {
+    z-index: 100;
+    margin-left: 10% !important;
+}
+
+#dashboard {
+    padding-top: 1rem;
+    width: 800px;
+}
+
+.seven.column, .nine.column, .ten.column, .six.column {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+    font: bold 1.2rem "SourceCodePro",sans-serif !important;
+}
+
+h4 {
+    font: bold 1.3rem "SourceCodePro",sans-serif !important;
+}
+
+.table {
+    font: bold 1.1rem "SourceCodePro",sans-serif;
+}
+
+.seven.column, .ten.column {
+    text-align: right;
+}
+
+.nine.column, .six.column {
+    text-align: left;
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: url('../font/SourceCodePro-Semibold.ttf');
+}
+
+h3 .check.icon {
+    color: green;
+}

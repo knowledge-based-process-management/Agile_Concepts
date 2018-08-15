@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regression Testing</title>
+    <link rel="stylesheet" href="./lib/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./lib/Semantic-UI/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/regressionTesting.css" type="text/css">
+    <script type="text/javascript" src="./lib/jquery.1.12.4.min.js"></script>
+    <script type="text/javascript" src="./lib/Semantic-UI/semantic.min.js"></script>
+    <script type="text/javascript" src="./control/regressionTestingControl.js"></script>
+</head>
+<body>
+    <div class="ui massive breadcrumb">
+        <section class="section">Project</section>
+        <i class="right chevron icon divider inverted"></i>
+        <section class="section">PicShare</section>
+        <i class="right chevron icon divider inverted"></i>
+        <section class="section">Regression Testing</section>
+    </div>
+    <br>
+    <div id="dashboard">
+        <h4 class="ui horizontal divider header">
+            Toolbar
+        </h4>
+        <div class="ui icon buttons">
+            <button class="ui big button"><i class="large file text icon"></i></button>
+            <button class="ui big button"><i class="large folder open icon"></i></button>
+            <button class="ui big button"><i class="large folder icon"></i></button>
+            <button class="ui big button"><i class="large save icon"></i></button>
+        </div>
+        <div class="ui icon buttons">
+            <button class="ui big button"><i class="large linkify icon"></i></button>
+            <button class="ui big button" onclick="$('#conduct_testing_modal').modal('show');"><i class="large video play icon"></i></button>
+            <button class="ui big button"><i class="large stop circle icon"></i></button>
+        </div>
+        <div class="ui icon buttons">
+            <button class="ui big button"><i class="large copy icon"></i></button>
+            <button class="ui big button"><i class="large list icon"></i></button>
+            <button class="ui big button"><i class="large attach icon"></i></button>
+            <button class="ui big button"><i class="large trash icon"></i></button>
+        </div>
+        <h4 class="ui horizontal divider header">
+            Resources
+        </h4>
+        <div id="resource">
+            <div class="treemenu">
+                <div class="ui fluid styled accordion">
+                    <div class="active title">
+                        <i class="file icon"></i> Tests
+                    </div>
+                    <div class="active content">
+                        <div class="accordion">
+                            <div class="title">
+                                <i class="folder icon"></i> Build 1.0
+                            </div>
+                            <div class="content">
+                                Build 1.0 Contents
+                            </div>
+                            <div class="title">
+                                <i class="folder icon"></i> Build 2.0
+                            </div>
+                            <div class="content">
+                                Build 2.0 Contents
+                            </div>
+                            <div class="selected active title">
+                                <i class="open folder icon"></i> Build 3.0
+                            </div>
+                            <div class="active content">
+                                <div class="accordion">
+                                    <div class="active title">
+                                        <i class="dropdown icon"></i> Required (Environment)
+                                    </div>
+                                    <div class="active content">
+                                        <i class="angle right icon"></i> Items to build &ensp;&ensp; Build $/TestDemo/...
+                                    </div>
+                                    <div class="active title">
+                                        <i class="dropdown icon"></i> Basic (Test Cases)
+                                    </div>
+                                    <div class="active content">
+                                        <i class="angle right icon"></i> Test Source &ensp;&ensp;&ensp;&ensp;&ensp; Run $/TestDemo/...<br>
+                                        <i class="angle right icon"></i> Test Settings &ensp;&ensp; $/TestDemo/conf.json
+                                    </div>
+                                    <div class="active title">
+                                        <i class="dropdown icon"></i> Results
+                                    </div>
+                                    <div class="active content" id="test_result">
+                                        <!--<i class="angle right icon"></i> 2017-07-19T18:06:39.610Z <br>-->
+                                        <!--<i class="angle right icon"></i> 2017-07-18T18:06:34.793Z <br>-->
+                                        <!--<i class="angle right icon"></i> 2017-07-18T18:06:27.478Z-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui tiny modal" id="conduct_testing_modal">
+        <div class="header">
+            Testing...
+        </div>
+        <div class="content">
+            <h3><i class="large check icon"></i>Setup active environment</h3>
+            <h3><i class="large check icon"></i>Get required dependencies</h3>
+            <h3><i class="large check icon"></i>Get test scripts</h3>
+            <h3><i class="large check icon"></i>Analyze test cases</h3>
+            <h3><i class="large check icon"></i>Conduct testing</h3>
+            <h3><i class="large check icon"></i>Generate test results</h3>
+        </div>
+        <div class="actions">
+            <div class="ui positive left labeled icon button" onclick="add_one_test_result()">
+                Done
+                <i class="check icon"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

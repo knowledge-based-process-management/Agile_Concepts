@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>Basic Workflow</title>
+    <link rel="stylesheet" href="./lib/Semantic-UI/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/basicWorkflow.css" type="text/css">
+    <script type="text/javascript" src="./lib/jquery.1.12.4.min.js"></script>
+    <script type="text/javascript" src="./lib/Semantic-UI/semantic.min.js"></script>
+    <script type="text/javascript" src="./control/basicWorkflowControl.js"></script>
+</head>
+<body>
+    <div class="headtitle">
+        <div class="ui icon message fixed-width-message">
+            <i class="random icon"></i>
+            <div class="content">
+                <div class="header">
+                    Workflow & Tools
+                </div>
+                <p id="message_info">Standard Agile Process with Advanced Features</p>
+            </div>
+        </div>
+        <!--<div class="ui teal large launch left attached fixed button" onclick='window.open("./analysisNotification.html", "_blank");'>-->
+            <!--<span class="text">Bug Reports</span>-->
+        <!--</div>-->
+    </div>
+    <div id="graph">
+        <button class="ui button workflow_step"><h3>Development & Testing</h3> by engineer</button>
+        <i class="big long arrow right icon"></i>
+        <button class="ui vertical animated button workflow_step" onclick='window.open("./code_review/code_review_dashboard_start.html", "_blank");'>
+            <div class="visible content"><h3>Review</h3> by peer engineer</div>
+            <div class="hidden content">
+                <i class="large configure icon"></i>
+            </div>
+        </button>
+        <i class="big long arrow right icon"></i>
+        <button class="ui vertical animated button workflow_step" onclick='window.open("./regressionTesting.html", "_blank");'>
+            <div class="visible content">Automated <h3>Regression Testing</h3></div>
+            <div class="hidden content">
+                <i class="large configure icon"></i>
+            </div>
+        </button>
+        <i class="big long arrow right icon"></i>
+        <button class="ui vertical animated button workflow_step" onclick='window.open("./analysisNotification.html", "_blank");'>
+            <div class="visible content"><h3>Release Testing</h3></div>
+            <div class="hidden content">
+                <i class="large configure icon"></i>
+            </div>
+        </button>
+        <i class="big long arrow right icon"></i>
+        <!--<div class="ui segment workflow_step">-->
+            <!--<center>-->
+                <!--<button class="ui button workflow_substep"><h3>H1 Deploy</h3>(internal)</button><br>-->
+                <!--<i class="large arrow down icon"></i><i class="large arrow up icon"></i><br>-->
+                <!--<button class="ui button workflow_substep"><h3>H2 Deploy</h3>(1% User)</button><br>-->
+                <!--<i class="large arrow down icon"></i><i class="large arrow up icon"></i><br>-->
+                <!--<button class="ui button workflow_substep"><h3>H3 Deploy</h3>(Full)</button>-->
+            <!--</center>-->
+        <!--</div>-->
+        <!--<i class="big long arrow right icon"></i>-->
+        <button class="ui animated fade button workflow_step" onclick='window.open("./gateKeeper.html", "_blank");'>
+            <div class="visible content"><h3>GateKeeper</h3>switch on full or selected subset of user</div>
+            <div class="hidden content">
+                <center>
+                    <div class="workflow_substep"><div><h3>H1 Deploy</h3>(Internal)</div></div>
+                    <div class="updown_direction"><i class="large arrow down icon"></i><i class="large arrow up icon"></i></div>
+                    <div class="workflow_substep"><div><h3>H2 Deploy</h3>(Partial External)</div></div>
+                    <div class="updown_direction"><i class="large arrow down icon"></i><i class="large arrow up icon"></i></div>
+                    <div class="workflow_substep"><div><h3>H3 Deploy</h3>(Full External)</div></div>
+                </center>
+            </div>
+        </button>
+        <canvas id="arrow"></canvas>
+    </div>
+</body>
+</html>

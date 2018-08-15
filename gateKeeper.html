@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>GateKeeper</title>
+    <link rel="stylesheet" href="./lib/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./lib/Semantic-UI/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/gateKeeper.css" type="text/css">
+    <script type="text/javascript" src="./lib/jquery.1.12.4.min.js"></script>
+    <script type="text/javascript" src="./lib/Semantic-UI/semantic.min.js"></script>
+    <script type="text/javascript" src="./control/gateKeeperControl.js"></script>
+</head>
+<body>
+    <div class="ct" id="t1">
+        <div class="ct" id="t2">
+            <div class="ct" id="t3">
+                <div class="ct" id="t4">
+                    <div class="ct" id="t5">
+                        <div class="ui massive breadcrumb">
+                            <section class="section">Project</section>
+                            <i class="right chevron icon divider"></i>
+                            <section class="section">PicShare</section>
+                            <i class="right chevron icon divider inverted"></i>
+                            <section class="section">GateKeeper</section>
+                        </div>
+                        <ul id="menu">
+                            <a href="#t1"><li class="custom_icon fa fa-home" id="eins"></li></a>
+                            <a href="#t2"><li class="custom_icon fa fa-user" id="zwei"></li></a>
+                            <a href="#t3"><li class="custom_icon fa fa-puzzle-piece" id="drei"></li></a>
+                            <a href="#t4"><li class="custom_icon fa fa-sitemap" id="vier"></li></a>
+                            <a href="#t5"><li class="custom_icon fa fa-cogs" id="funf"></li></a>
+                        </ul>
+                        <div class="page" id="p1">
+                            <div class="ui cards">
+                                <div class="ui raised card" id="user_card">
+                                    <div class="content">
+                                        <div class="ui grid">
+                                            <div class="six wide column">
+                                                <i class="user huge icon"></i>
+                                            </div>
+                                            <div class="ten wide column">
+                                                <span class="number">36</span>
+                                                <span class="type">User Types</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui bottom attached button">
+                                        <i class="add icon"></i>
+                                        New User Type
+                                    </div>
+                                </div>
+                                <div class="ui raised card" id="feature_card">
+                                    <div class="content">
+                                        <div class="ui grid">
+                                            <div class="six wide column">
+                                                <i class="puzzle huge icon"></i>
+                                            </div>
+                                            <div class="ten wide column">
+                                                <span class="number">52</span>
+                                                <span class="type">Features</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui bottom attached button">
+                                        <i class="add icon"></i>
+                                        New Feature
+                                    </div>
+                                </div>
+                                <div class="ui raised card" id="gate_card">
+                                    <div class="content">
+                                        <div class="ui grid">
+                                            <div class="six wide column">
+                                                <i class="sitemap huge icon"></i>
+                                            </div>
+                                            <div class="ten wide column">
+                                                <span class="number">12</span>
+                                                <span class="type">Deployments</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui bottom attached button" onclick="$('#add_gate_modal').modal('show');">
+                                        <i class="add icon"></i>
+                                        New Deployment
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page" id="p2">
+                            <!--<section class="custom_icon fa fa-user-o">-->
+                                <!--<span class="title">Users</span>-->
+                                <!--<p class="hint">-->
+                                    <!--Manage user types & user percentage. <br>-->
+                                    <!--For example:-->
+                                    <!--country/region, locale, device, number of friends, internal/1%/100% , etc.-->
+                                <!--</p>-->
+                            <!--</section>-->
+                            <section>
+                                <div class="ui two column grid">
+                                    <div class="ui column">
+                                        <h3>User Area</h3>
+                                        <table class="ui striped table">
+                                            <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th>Detail</th>
+                                                <th>Operations</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Internal Employees</td>
+                                                <td>for H1 only</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Global</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>North America</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Asia-Pacific</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Europe</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Australia</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr><th colspan="3">
+                                                <div class="ui left floated pagination menu">
+                                                    <a class="icon item">
+                                                        <i class="left chevron icon"></i>
+                                                    </a>
+                                                    <a class="item">1</a>
+                                                    <a class="item">2</a>
+                                                    <a class="item">3</a>
+                                                    <a class="item">4</a>
+                                                    <a class="icon item">
+                                                        <i class="right chevron icon"></i>
+                                                    </a>
+                                                </div>
+                                            </th>
+                                                <th colspan="2">
+                                                    <div class="ui right floated blue right labeled icon button">
+                                                        New Area
+                                                        <i class="right plus icon"></i>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="column">
+                                        <h3>User Device</h3>
+                                        <table class="ui striped table">
+                                            <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th>Detail</th>
+                                                <th>Operations</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>IOS</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Android</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Windows Phone</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>BlackBerry</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Sailfish OS</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Tizen</td>
+                                                <td>...</td>
+                                                <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                                <td>
+                                                    <button class="ui icon button"><i class="edit icon"></i></button>
+                                                    <button class="ui icon button"><i class="remove icon"></i></button>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr><th colspan="3">
+                                                <div class="ui left floated pagination menu">
+                                                    <a class="icon item">
+                                                        <i class="left chevron icon"></i>
+                                                    </a>
+                                                    <a class="item">1</a>
+                                                    <a class="item">2</a>
+                                                    <a class="icon item">
+                                                        <i class="right chevron icon"></i>
+                                                    </a>
+                                                </div>
+                                            </th>
+                                                <th colspan="2">
+                                                    <div class="ui right floated blue right labeled icon button">
+                                                        New Device
+                                                        <i class="right plus icon"></i>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="page" id="p3">
+                            <!--<section class="custom_icon fa fa-connectdevelop">-->
+                                <!--<span class="title">Features</span>-->
+                                <!--<p class="hint">-->
+                                    <!--Manage Features.<br>-->
+                                    <!--For example:-->
+                                    <!--create public event, share to public, like button, post & edit, etc.-->
+                                <!--</p>-->
+                            <!--</section>-->
+                            <section>
+                                <h3>Features Detail</h3>
+                                <table class="ui striped table">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Detail</th>
+                                        <th>Operations</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>create public event</td>
+                                        <td>...</td>
+                                        <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>create private event</td>
+                                        <td>for registered users</td>
+                                        <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>share to public</td>
+                                        <td>...</td>
+                                        <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>share to private</td>
+                                        <td>for registered users</td>
+                                        <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>post new photo</td>
+                                        <td>public feature</td>
+                                        <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>edit photo</td>
+                                        <td>for the photo's owner only</td>
+                                        <td><button class="ui icon button"><i class="unhide icon"></i></button></td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr><th colspan="3">
+                                        <div class="ui left floated pagination menu">
+                                            <a class="icon item">
+                                                <i class="left chevron icon"></i>
+                                            </a>
+                                            <a class="item">1</a>
+                                            <a class="item">2</a>
+                                            <a class="item">3</a>
+                                            <a class="item">4</a>
+                                            <a class="item">5</a>
+                                            <a class="item">6</a>
+                                            <a class="item">7</a>
+                                            <a class="item">8</a>
+                                            <a class="item">9</a>
+                                            <a class="icon item">
+                                                <i class="right chevron icon"></i>
+                                            </a>
+                                        </div>
+                                    </th>
+                                        <th colspan="2">
+                                            <div class="ui right floated blue right labeled icon button">
+                                                New Feature
+                                                <i class="right plus icon"></i>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+
+                            </section>
+                        </div>
+                        <div class="page" id="p4">
+                            <!--<section class="custom_icon fa fa-braille">-->
+                                <!--<span class="title">Deployments</span>-->
+                                <!--<p class="hint">-->
+                                    <!--Manage Deployments. <br>-->
+                                    <!--Enable/disable specific features to target users.-->
+                                <!--</p>-->
+                            <!--</section>-->
+                            <section>
+                                <h3>Deployments Detail</h3>
+                                <table class="ui striped table">
+                                    <thead>
+                                    <tr>
+                                        <th>Deployment</th>
+                                        <th>Date <i class="caret down icon"></i></th>
+                                        <th>Area</th>
+                                        <th>Device</th>
+                                        <th>Percentage</th>
+                                        <th>Released Features</th>
+                                        <th>Operations</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>H3</td>
+                                        <td>08-02-2017</td>
+                                        <td>Europe</td>
+                                        <td>Android</td>
+                                        <td>100%</td>
+                                        <td>
+                                            <button class="ui icon button">
+                                                <i class="unhide icon"></i>
+                                            </button>
+                                            <div class="ui special popup">
+                                                <span class="popup_item">create public event</span>
+                                                <span class="popup_item">share to public</span>
+                                                <span class="popup_item">post new photo</span>
+                                                <span class="popup_item">edit photo</span>
+                                                <span class="popup_item">like button</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H2</td>
+                                        <td>07-25-2017</td>
+                                        <td>Europe</td>
+                                        <td>Android</td>
+                                        <td>25%</td>
+                                        <td>
+                                            <button class="ui icon button"><i class="unhide icon"></i></button>
+                                            <div class="ui special popup">
+                                                <span class="popup_item">create public event</span>
+                                                <span class="popup_item">share to public</span>
+                                                <span class="popup_item">post new photo</span>
+                                                <span class="popup_item">edit photo</span>
+                                                <span class="popup_item">like button</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H3</td>
+                                        <td>07-22-2017</td>
+                                        <td>Asia-Pacific</td>
+                                        <td>Android & IOS</td>
+                                        <td>100%</td>
+                                        <td>
+                                            <button class="ui icon button"><i class="unhide icon"></i></button>
+                                            <div class="ui special popup">
+                                                <span class="popup_item">create public event</span>
+                                                <span class="popup_item">create private event</span>
+                                                <span class="popup_item">share to public</span>
+                                                <span class="popup_item">share to private</span>
+                                                <span class="popup_item">post new photo</span>
+                                                <span class="popup_item">edit photo</span>
+                                                <span class="popup_item">like button</span>
+                                                <span class="popup_item">post comment</span>
+                                                <span class="popup_item">delete comment</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H2</td>
+                                        <td>07-15-2017</td>
+                                        <td>Asia-Pacific</td>
+                                        <td>Android & IOS</td>
+                                        <td>1%</td>
+                                        <td>
+                                            <button class="ui icon button"><i class="unhide icon"></i></button>
+                                            <div class="ui special popup">
+                                                <span class="popup_item">create public event</span>
+                                                <span class="popup_item">create private event</span>
+                                                <span class="popup_item">share to public</span>
+                                                <span class="popup_item">share to private</span>
+                                                <span class="popup_item">post new photo</span>
+                                                <span class="popup_item">edit photo</span>
+                                                <span class="popup_item">post comment</span>
+                                                <span class="popup_item">delete comment</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H1</td>
+                                        <td>07-11-2017</td>
+                                        <td>Internal Employees</td>
+                                        <td>IOS</td>
+                                        <td>100%</td>
+                                        <td>
+                                            <button class="ui icon button"><i class="unhide icon"></i></button>
+                                            <div class="ui special popup">
+                                                <span class="popup_item">share to public</span>
+                                                <span class="popup_item">share to private</span>
+                                                <span class="popup_item">post new photo</span>
+                                                <span class="popup_item">edit photo</span>
+                                                <span class="popup_item">post comment</span>
+                                                <span class="popup_item">delete comment</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H1</td>
+                                        <td>07-11-2017</td>
+                                        <td>Internal Employees</td>
+                                        <td>Android</td>
+                                        <td>100%</td>
+                                        <td>
+                                            <button class="ui icon button"><i class="unhide icon"></i></button>
+                                            <div class="ui special popup">
+                                                <span class="popup_item">create public event</span>
+                                                <span class="popup_item">create private event</span>
+                                                <span class="popup_item">share to public</span>
+                                                <span class="popup_item">share to private</span>
+                                                <span class="popup_item">post new photo</span>
+                                                <span class="popup_item">edit photo</span>
+                                                <span class="popup_item">post comment</span>
+                                                <span class="popup_item">delete comment</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="ui icon button"><i class="edit icon"></i></button>
+                                            <button class="ui icon button"><i class="remove icon"></i></button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr><th colspan="5">
+                                        <div class="ui left floated pagination menu">
+                                            <a class="icon item">
+                                                <i class="left chevron icon"></i>
+                                            </a>
+                                            <a class="item">1</a>
+                                            <a class="item">2</a>
+                                            <a class="icon item">
+                                                <i class="right chevron icon"></i>
+                                            </a>
+                                        </div>
+                                    </th>
+                                    <th colspan="2">
+                                        <div class="ui right floated blue right labeled icon button" onclick="$('#add_gate_modal').modal('show');">
+                                            New Deployment
+                                            <i class="right plus icon"></i>
+                                        </div>
+                                    </th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+
+                            </section>
+                        </div>
+                        <div class="page" id="p5">
+                            <section class="custom_icon fa fa-cogs">
+                                <span class="title">Settings</span>
+                                <p class="hint">
+                                    Any other settings here!
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui modal" id="add_gate_modal">
+        <div class="header">
+            New Deployment
+            <span id="deployment_number">
+                <label>&emsp; for </label>
+                <div name="deployment" class="ui selection dropdown">
+                    <input type="hidden" name="deployment">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Iteration #</div>
+                    <div class="menu">
+                        <div class="item" data-value="H1">H1</div>
+                        <div class="item" data-value="H2">H2</div>
+                        <div class="item" data-value="H3">H3</div>
+                    </div>
+                </div>
+            </span>
+        </div>
+        <div class="content">
+            <div class="ui two column grid">
+                <div class="column">
+                    <h4 class="ui dividing header">User Type</h4>
+                    <div class="ui grid">
+                        <div class="four wide column">
+                            <label>Area:</label>
+                        </div>
+                        <div class="twelve wide column">
+                            <div name="area" class="ui fluid search selection dropdown">
+                                <input type="hidden" name="area" value="internal">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Area</div>
+                                <div class="menu">
+                                    <div class="item" data-value="internal">Internal Employees</div>
+                                    <div class="item" data-value="global">Global</div>
+                                    <div class="item" data-value="north america">North America</div>
+                                    <div class="item" data-value="asia">Asia-Pacific</div>
+                                    <div class="item" data-value="europe">Europe</div>
+                                    <div class="item" data-value="australia">Australia</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="four wide column">
+                            <label>Device:</label>
+                        </div>
+                        <div class="twelve wide column">
+                            <div name="device" class="ui fluid search selection dropdown">
+                                <input type="hidden" name="device" value="all">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Device</div>
+                                <div class="menu">
+                                    <div class="item" data-value="all">All</div>
+                                    <div class="item" data-value="androidios">Android & IOS</div>
+                                    <div class="item" data-value="ios">IOS</div>
+                                    <div class="item" data-value="android">Android</div>
+                                    <div class="item" data-value="windows">Windows Phone</div>
+                                    <div class="item" data-value="windows">BlackBerry</div>
+                                    <div class="item" data-value="others">Others</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="four wide column">
+                            <label>Percentage:</label>
+                        </div>
+                        <div class="twelve wide column">
+                            <div name="coverage" class="ui fluid selection dropdown" >
+                                <input type="hidden" name="device" value="50percent">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Percentage</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1percent">1%</div>
+                                    <div class="item" data-value="25percent">25%</div>
+                                    <div class="item" data-value="50percent">50%</div>
+                                    <div class="item" data-value="75percent">75%</div>
+                                    <div class="item" data-value="100percent">100%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="column">
+                    <h4 class="ui dividing header">Released Feature</h4>
+                    <div  class="ui fluid multiple search selection dropdown">
+                        <input type="hidden" name="feature" value="1,2,3,4,5,6,7,8">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Select Features</div>
+                        <div class="menu">
+                            <option class="item" data-value="1">create public event</option>
+                            <option class="item" data-value="2">create private event</option>
+                            <option class="item" data-value="3">share to public</option>
+                            <option class="item" data-value="4">share to private</option>
+                            <option class="item" data-value="5">post new photo</option>
+                            <option class="item" data-value="6">edit photo</option>
+                            <option class="item" data-value="7">delete photo</option>
+                            <option class="item" data-value="8">like button</option>
+                            <option class="item" data-value="9">post comment</option>
+                            <option class="item" data-value="10">delete comment</option>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <div class="ui black cancel button">
+                Cancel
+            </div>
+            <div class="ui positive right labeled icon button">
+                Deploy
+                <i class="right chevron icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui tiny modal" id="deploy_modal">
+        <div class="header">
+            Deploying...
+        </div>
+        <div class="content">
+            <h3><i class="large check icon"></i>Collect setting information</h3>
+            <h3><i class="large check icon"></i>Validate & compile configuration file</h3>
+            <h3><i class="large check icon"></i>Deploy to server</h3>
+            <h3><i class="large check icon"></i>Push notification to target devices</h3>
+        </div>
+        <div class="actions">
+            <div class="ui positive left labeled icon button" onclick="add_one_gate()">
+                Done
+                <i class="check icon"></i>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="lib/Semantic-UI/semantic.min.css" type="text/css">
+<link rel="stylesheet" href="css/global.css" type="text/css">
+<link rel="stylesheet" href="css/code-review.css" type="text/css">
+<link rel="stylesheet" href="css/less/range.css" type="text/css">
+<script type="text/javascript" src="./lib/jquery.1.12.4.min.js"></script>
+<!-- // <script type="text/javascript" src="./lib/less.min.js"></script> -->
+<script type="text/javascript" src="./lib/Semantic-UI/semantic.min.js"></script>
+<script type="text/javascript" src="./model/Adapter.js"></script>
+<script type="text/javascript" src="./model/Process.js"></script>
+<script type="text/javascript" src="./control/codeReview.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+
+			<div class="head-section">
+			<div class="user-profile-box">
+				<div class="row-item">
+					<a href="code_review_dashboard.html"><img class="user-icon" src="img/avatar/large/steve.jpg" /></a>
+				</div>
+				<div class="user-content row-item">
+					<div class="header">Steve</div>
+					<div class="button" id="logout_factor">
+						<span>Logout</span>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div id="content">
+			<div id="dash-board-panel" class="ui grid">
+				<div class="row">
+					<div class="four wide column">
+						<div class="ui segment" id="commits-panel">
+							<div class="ui top attached label">Commits</div>
+							<div class="ui card">
+								<div class="content commit-content">
+									<div class="description">Add picture for user profile.</div>
+<div class="ui dimmer">
+    <div class="content">
+      <div class="center">
+        <a>
+           <i class="users icon"></i>
+           start review
+        </a>
+      </div>
+    </div>
+  </div>
+								</div>
+								<div class="extra content">
+									<a href="code_review_commit_analysis.html"> <i class="code icon"></i> ID:122
+									</a>
+								</div>
+							</div>
+
+							<div class="ui card">
+								<div class="content commit-content">
+									<div class="description">Improved readibility of the error message of login failure.</div>
+<div class="ui dimmer">
+    <div class="content">
+      <div class="center">
+        <a>
+           <i class="users icon"></i>
+           start review
+        </a>
+      </div>
+    </div>
+  </div>
+								</div>
+								<div class="extra content">
+									<a href="code_review_commit_analysis.html"> <i class="code icon"></i> ID:123
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="four wide column">
+						<div class="ui segment" id="in-review-panel">
+							<div class="ui top attached label">In Review</div>
+							<div class="ui card">
+								<div class="content">
+									<div class="description">Corrected algorithm for sanity check of user info.</div>
+								</div>
+								<div class="extra content">
+									<a href="code_review_commit_analysis.html"> <i class="code icon"></i> ID:120
+									</a>
+								</div>
+							</div>
+
+							<div class="ui card">
+								<div class="content">
+									<div class="description">Corrected error in reading user profile.</div>
+								</div>
+								<div class="extra content">
+									<a href="code_review_commit_analysis.html"> <i class="code icon"></i> ID:121
+									</a>
+								</div>
+							</div>
+							
+								<div class="ui card">
+								<div class="content commit-content">
+									<div class="description">Fixed picture upload error when not inputting title.</div>
+								</div>
+								<div class="extra content">
+									<a href="code_review_commit_analysis.html"> <i class="code icon"></i> ID:124
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="four wide column">
+						<div class="ui segment"  id="notification-panel">
+							<div class="ui top attached label">Notifications for Completed Reviews</div>
+							<div class="ui card">
+								<div class="content critical result-content" data-url="code_review_commenting_critical.html">
+									<div class="description">Added interface for reviewing user info.</div>
+								</div>
+								<div class="extra content">
+									<a href="code_review_commit_analysis.html"> <i class="code icon"></i> ID:117
+									</a>
+								</div>
+							</div>
+
+							<div class="ui card">
+								<div class="content minor result-content" data-url="code_review_commenting_minor.html">
+									<div class="description">Corrected password encoding algorithm.</div>
+								</div>
+								<div class="extra content">
+									<a href="code_review_commit_analysis.html"> <i class="code icon"></i> ID:118
+									</a>
+								</div>
+							</div>
+							
+							<div class="ui card">
+								<div class="content passed result-content" data-url="code_review_commenting_ready.html">
+									<div class="description">Fixed the error in reading saved jpg image.</div>
+								</div>
+								<div class="extra content">
+									<a href="code_review_commit_analysis.html"> <i class="code icon"></i> ID:119
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="four wide column">
+						<div class="ui segment" id="activities-panel">
+							<div class="ui top attached label">Code Review Requests</div>
+							<div class="ui card">
+								<div class="content request-content" data-url="code-review-pages/code_review_commenting_Elliot.html">
+								    <img class="right floated mini ui image" src="img/avatar/large/elliot.jpg">
+							     	<div class="header">
+							      	Elliot
+							      	</div>
+									<div class="description">Made changes on login page.</div>
+								</div>
+								<div class="extra content">
+									<span> <i class="code icon"></i> ID:224
+									</span>
+								</div>
+							</div>
+
+							<div class="ui card">
+								<div class="content request-content" data-url="code-review-pages/code_review_commenting_Helen.html">
+								 <img class="right floated mini ui image" src="img/avatar/large/helen.jpg">
+							     <div class="header">
+							      Helen
+							     </div>
+									<div class="description">Corrected posting picture error.</div>
+								</div>
+								<div class="extra content">
+									<span> <i class="code icon"></i> ID:423
+									</span>
+								</div>
+							</div>
+							
+							<div class="ui card">
+								<div class="content request-content" data-url="code-review-pages/code_review_commenting_Daniel.html">
+								 <img class="right floated mini ui image" src="img/avatar/large/daniel.jpg">
+							     <div class="header">
+							      Daniel
+							     </div>
+									<div class="description">Created encrypted password procedure.</div>
+								</div>
+								<div class="extra content">
+									<span> <i class="code icon"></i> ID:324
+									</span>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		
+<button class="circular ui icon button" data-url="code_review_dashboard_Elliot.html" style="margin:0 20px 20px 20px">
+  <i class="linkify icon"></i>
+</button>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Code Review</title>
+<link rel="stylesheet" href="./lib/Semantic-UI/semantic.min.css" type="text/css">
+<link rel="stylesheet" href="./css/global.css" type="text/css">
+<link rel="stylesheet" href="./css/code-review.css" type="text/css">
+<link rel="stylesheet" href="./css/less/range.css" type="text/css">
+<link rel="stylesheet" href="./lib/prism.css" type="text/css">
+<script type="text/javascript" src="./lib/jquery.1.12.4.min.js"></script>
+<!-- // <script type="text/javascript" src="./lib/less.min.js"></script> -->
+<script type="text/javascript" src="./lib/Semantic-UI/semantic.min.js"></script>
+<script type="text/javascript" src="./control/config.js"></script>
+<script type="text/javascript" src="./model/Adapter.js"></script>
+<script type="text/javascript" src="./model/Process.js"></script>
+<script type="text/javascript" src="./control/codeReview.js"></script>
+<script type="text/javascript" src="./lib/prism.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+
+			<div class="head-section">
+			<div class="user-profile-box">
+				<div class="row-item">
+					<a href="code_review_dashboard.html"><img class="user-icon" src="./img/avatar/large/steve.jpg"/></a>
+				</div>
+				<div class="user-content row-item">
+					<div class="header">Steve</div>
+					<!-- <div class="button" id="logout_factor">
+						<span>Logout</span> 
+					</div> -->
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div id="content">
+			<div id="code-review-panel" class="ui grid">
+<!-- row -->
+				<div class="row">
+
+					<div class="eight wide column">
+						<div class="ui existing segment">
+							<div class="ui attached top label">
+								<span class="title">criteriaControl.<em>js</em></span>
+								<span class="commit-version right previous-commit-display">ID:123</span>
+							</div>
+							<pre class='line-numbers' data-line="32-34" data-line-offset="30" data-start="30">
+      <code class='language-javascript'>
+ var instanceId = getParameter("instanceId");
+ var view = getParameter("view");
+ var url = site-base-url+"/dashboard.html?";
+ if (view != false) {
+     url += "instanceId=" + instanceId + "&view=" + view;
+ } else {
+     url += "instanceId=" + instanceId;
+ }
+								</code>
+							</pre>
+						</div>
+					</div>
+					
+					<div class="eight wide column">
+						<div class="ui existing segment">
+							<div class="ui attached top label">
+								<span class="title">criteriaControl.<em>js</em></span>
+								<span class="commit-version right latest-commit-display">ID:124</span>
+							</div>
+							<pre class='line-numbers' data-line="32-34" data-line-offset="30" data-start="30">
+      <code class='language-javascript'>
+ var instanceId = getParameter("instanceId");
+ var view = getParameter("view");
+ var url = site-base-url+"/dashboard.html?";
+ if (view != false) {
+     url += "instanceId=" + instanceId + "&view=" + view;
+ } else {
+     url += "instanceId=" + instanceId;
+ }
+								</code>
+							</pre>
+						</div>
+					</div>
+			</div>
+<!-- line -->
+				<div class="row">
+					<div class="fifteen wide column comment-block">
+						<div class="ui accordion">
+						    <div class="title">
+							<h3 class="ui dividing header">Comments 
+   							 <i class="dropdown icon comment-dropdown"></i></h3>
+							</div>
+							<div class="ui comments content">
+							<div class="comment">
+								<a class="avatar"> <img src="./img/avatar/large/daniel.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Daniel</a>
+									<div class="metadata">
+										<span class="date">Today at 5:42PM</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">Should make the names of variables meaningful.</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="comment">
+								<a class="avatar"> <img
+									src="./img/avatar/large/elliot.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Elliot</a>
+									<div class="metadata">
+										<span class="date">Yesterday at 12:30AM</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">
+										<p>Change recurrence to iteration to improve performance!</p>
+									</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+								<div class="comments">
+									<div class="comment">
+										<a class="avatar"> <img
+											src="./img/avatar/large/steve.jpg">
+										</a>
+										<div class="content">
+											<a class="author">Steve</a>
+											<div class="metadata">
+												<span class="date">Just now</span>
+											</div>
+											<div class="text">That is a good suggestion.</div>
+											<div class="actions">
+												<a class="reply">Reply</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="comment">
+								<a class="avatar"> <img src="./img/avatar/large/helen.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Helen</a>
+									<div class="metadata">
+										<span class="date">5 days ago</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">Potential conflict in namespace. Use more specific names.</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="comment-box">
+							<div class="comment-box-left-column">
+								    <a class="avatar"> <img src="./img/avatar/large/steve.jpg">
+									</a>
+							</div>
+							<div class="comment-box-right-column">
+							<form class="ui reply form reply-to-review" data-icon="./img/avatar/large/steve.jpg" data-user-name="Steve">
+								<div class="field">
+									<textarea name="input-comment" ></textarea>
+								</div>
+								<div class="ui blue labeled icon submit-button">
+									<i class="icon edit"></i> Add Reply
+								</div>
+							</form>
+							</div>
+							</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+<!-- row -->
+				<div class="row">
+
+					<div class="eight wide column">
+						<div class="ui existing segment">
+							<div class="ui attached top label">
+								<span class="title">postPictureControl.<em>js</em></span>
+								<span class="commit-version right previous-commit-display">ID:123</span>
+							</div>
+							<pre class='line-numbers' data-line="18-19" data-line-offset="15" data-start="15">
+      <code class='language-javascript'>
+if (product_type == "web_server") {
+    		process.processDefinitionId = process_definition.COTS_Services;
+    	} else if (product_type == "R_D_tools") {
+    		process.processDefinitionId = process_definition.Architected_Agile;
+             if (cocomoData.sw_cplx_value <= 0.94 && cocomoData.acap_value >= 1.22) {
+                process.processDefinitionId = process_definition.Architected_Agile_Low_Risk;
+            }
+    	} else if (product_type == "mobile_internet_feature") {
+								</code>
+							</pre>
+						</div>
+					</div>
+					
+					<div class="eight wide column">
+						<div class="ui existing segment">
+							<div class="ui attached top label">
+								<span class="title">postPictureControl.<em>js</em></span>
+								<span class="commit-version right latest-commit-display">ID:124</span>
+							</div>
+							<pre class='line-numbers' data-line="18-19" data-line-offset="15" data-start="15">
+      <code class='language-javascript'>
+if (product_type == "web_server") {
+    	} else if (product_type == "R_D_tools") {
+    		process.processDefinitionId = process_definition.Architected_Agile;
+             if (cocomoData.sw_cplx_value <= 0.94 && cocomoData.acap_value >= 1.22) {
+                process.processDefinitionId = process_definition.Architected_Agile_Low_Risk;
+            }
+    	} else if (product_type == "mobile_internet_feature") {
+								</code>
+							</pre>
+						</div>
+					</div>
+			</div>
+<!-- line -->
+				<div class="row">
+					<div class="fifteen wide column comment-block">
+						<div class="ui accordion">
+						    <div class="title">
+							<h3 class="ui dividing header">Comments 
+   							 <i class="dropdown icon comment-dropdown"></i></h3>
+							</div>
+							<div class="ui comments content">
+							<div class="comment">
+								<a class="avatar"> <img src="./img/avatar/large/daniel.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Daniel</a>
+									<div class="metadata">
+										<span class="date">Today at 5:42PM</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">Should make the names of variables meaningful.</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="comment">
+								<a class="avatar"> <img src="./img/avatar/large/helen.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Helen</a>
+									<div class="metadata">
+										<span class="date">5 days ago</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">Potential conflict in namespace. Use more specific names.</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="comment-box">
+							<div class="comment-box-left-column">
+								    <a class="avatar"> <img src="./img/avatar/large/steve.jpg">
+									</a>
+							</div>
+							<div class="comment-box-right-column">
+							<form class="ui reply form reply-to-review" data-icon="./img/avatar/large/steve.jpg" data-user-name="Steve">
+								<div class="field">
+									<textarea name="input-comment" ></textarea>
+								</div>
+								<div class="ui blue labeled icon submit-button">
+									<i class="icon edit"></i> Add Reply
+								</div>
+							</form>
+							</div>
+							</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+<!-- row -->
+				<div class="row">
+
+					<div class="eight wide column">
+						<div class="ui existing segment">
+							<div class="ui attached top label">
+								<span class="title">checkLoginData.<em>js</em></span>
+								<span class="commit-version right previous-commit-display">ID:123</span>
+							</div>
+							<pre class='line-numbers' data-line="12-13" data-line-offset="8" data-start="8">
+      <code class='language-javascript'>
+if(cocomoData.TDEV != 0){
+	cocomoData.STAFF = cocomoData.PMNS/cocomoData.TDEV;
+	}
+
+	if(cocomoData.TDEV != 0){
+	cocomoData.PROD = cocomoData.SIZE/cocomoData.TDEV;
+	}
+
+	cocomoData.E_most_likely = cocomoData.PMNS;
+								</code>
+							</pre>
+						</div>
+					</div>
+					
+					<div class="eight wide column">
+						<div class="ui existing segment">
+							<div class="ui attached top label">
+									<span class="title">checkLoginData.<em>js</em></span>
+								<span class="commit-version right latest-commit-display">ID:124</span>
+							</div>
+							<pre class='line-numbers' data-line="12-13" data-line-offset="8" data-start="8">
+      <code class='language-javascript'>
+if(cocomoData.TDEV != 0){
+	cocomoData.STAFF = cocomoData.PMNS/cocomoData.TDEV;
+	}
+// check cocomoData.TDEV
+	if(cocomoData.TDEV != 0){
+	cocomoData.PROD = cocomoData.SIZE/cocomoData.TDEV;
+	}
+
+	cocomoData.E_most_likely = cocomoData.PMNS;
+								</code>
+							</pre>
+						</div>
+					</div>
+			</div>
+<!-- line -->
+				<div class="row">
+					<div class="fifteen wide column comment-block">
+						<div class="ui accordion">
+						    <div class="title">
+							<h3 class="ui dividing header">Comments 
+   							 <i class="dropdown icon comment-dropdown"></i></h3>
+							</div>
+							<div class="ui comments content">
+							<div class="comment">
+								<a class="avatar"> <img src="./img/avatar/large/daniel.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Daniel</a>
+									<div class="metadata">
+										<span class="date">Today at 5:42PM</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">Should make the names of variables meaningful.</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="comment">
+								<a class="avatar"> <img src="./img/avatar/large/helen.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Helen</a>
+									<div class="metadata">
+										<span class="date">5 days ago</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">Potential conflict in namespace. Use more specific names.</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="comment-box">
+							<div class="comment-box-left-column">
+								    <a class="avatar"> <img src="./img/avatar/large/steve.jpg">
+									</a>
+							</div>
+							<div class="comment-box-right-column">
+							<form class="ui reply form reply-to-review" data-icon="./img/avatar/large/steve.jpg" data-user-name="Steve">
+								<div class="field">
+									<textarea name="input-comment" ></textarea>
+								</div>
+								<div class="ui blue labeled icon submit-button">
+									<i class="icon edit"></i> Add Reply
+								</div>
+							</form>
+							</div>
+							</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			
+<!-- line -->
+			</div>
+
+		</div>
+
+
+	</div>
+</body>
+</html>

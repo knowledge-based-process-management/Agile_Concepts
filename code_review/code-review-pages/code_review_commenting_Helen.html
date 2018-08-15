@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Code Review</title>
+<link rel="stylesheet" href="../lib/Semantic-UI/semantic.min.css" type="text/css">
+<link rel="stylesheet" href="../css/global.css" type="text/css">
+<link rel="stylesheet" href="../css/code-review.css" type="text/css">
+<link rel="stylesheet" href="../css/less/range.css" type="text/css">
+<link rel="stylesheet" href="../lib/prism.css" type="text/css">
+<script type="text/javascript" src="../lib/jquery.1.12.4.min.js"></script>
+<!-- // <script type="text/javascript" src="../lib/less.min.js"></script> -->
+<script type="text/javascript" src="../lib/Semantic-UI/semantic.min.js"></script>
+<script type="text/javascript" src="../model/Adapter.js"></script>
+<script type="text/javascript" src="../model/Process.js"></script>
+<script type="text/javascript" src="../control/codeReview.js"></script>
+<script type="text/javascript" src="../lib/prism.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+
+			<div class="head-section">
+			<div class="user-profile-box">
+				<div class="row-item">
+					<a href="../code_review_dashboard.html"><img class="user-icon" src="../img/avatar/large/helen.jpg"/></a>
+				</div>
+				<div class="user-content row-item">
+					<div class="header">Helen</div>
+					<!-- <div class="button" id="logout_factor">
+						<span>Logout</span> 
+					</div> -->
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div id="content">
+			<div id="code-review-panel" class="ui grid">
+<!-- row -->
+				<div class="row">
+
+					<div class="eight wide column">
+						<div class="ui existing segment">
+							<div class="ui attached top label">
+								<span class="title">createEvent.<em>js</em></span>
+								<span class="commit-version right">ID:422</span>
+							</div>
+							<pre class='line-numbers' data-line="27-28" data-line-offset="26" data-start="26">
+      <code class='language-javascript'>
+  // setSizeSliderValue(myRange, product_type, cocomoData);
+
+  // console.log(cocomoData['product_type_'+product_type]);
+  $('#product_type').parent().find('.default.text').text(cocomoData['product_type_'+product_type]);
+  $('#product_type_label').text(cocomoData['product_type_'+product_type] == 'Select product type' ? 'Not selected' : cocomoData['product_type_'+product_type]);
+  // $('#product_type').dropdown('set selected', cocomoData['product_type_'+product_type]);
+}
+								</code>
+							</pre>
+						</div>
+					</div>
+					
+					<div class="eight wide column">
+						<div class="ui existing segment">
+							<div class="ui attached top label">
+								<span class="title">createEvent.<em>js</em></span>
+								<span class="commit-version right">ID:423</span>
+							</div>
+							<pre class='line-numbers' data-line="27-28" data-line-offset="26" data-start="26">
+      <code class='language-javascript'>
+      
+      
+  // console.log(cocomoData['product_type_'+product_type]);
+  $('#product_type').parent().find('.default.text').text(cocomoData['product_type_'+product_type]);
+  $('#product_type_label').text(cocomoData['product_type_'+product_type] == 'Select product type' ? 'Not selected' : cocomoData['product_type_'+product_type]);
+  // $('#product_type').dropdown('set selected', cocomoData['product_type_'+product_type]);
+}
+								</code>
+							</pre>
+						</div>
+					</div>
+			</div>
+<!-- line -->
+				<div class="row">
+					<div class="fifteen wide column comment-block">
+						<div class="ui accordion">
+						    <div class="title">
+							<h3 class="ui dividing header">Comments 
+   							 <i class="dropdown icon comment-dropdown"></i></h3>
+							</div>
+							<div class="ui comments content">
+							<div class="comment">
+								<a class="avatar"> <img src="../img/avatar/large/daniel.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Daniel</a>
+									<div class="metadata">
+										<span class="date">Today at 5:42PM</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">Should make the names of variables meaningful.</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="comment">
+								<a class="avatar"> <img
+									src="../img/avatar/large/elliot.jpg">
+								</a>
+								<div class="content">
+									<a class="author">Elliot</a>
+									<div class="metadata">
+										<span class="date">Yesterday at 12:30AM</span>
+										<span class="circle status-ready-circle"></span>
+									</div>
+									<div class="text">
+										<p>Change recurrence to iteration to improve performance!</p>
+									</div>
+									<div class="actions">
+										<a class="reply">Reply</a>
+									</div>
+								</div>
+								<div class="comments">
+									<div class="comment">
+										<a class="avatar"> <img
+											src="../img/avatar/large/helen.jpg">
+										</a>
+										<div class="content">
+											<a class="author">Helen</a>
+											<div class="metadata">
+												<span class="date">Just now</span>
+											</div>
+											<div class="text">That is a good suggestion.</div>
+											<div class="actions">
+												<a class="reply">Reply</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="comment-box">
+							<div class="comment-box-left-column">
+								    <a class="avatar"> <img src="../img/avatar/large/steve.jpg">
+									</a>
+							</div>
+							<div class="comment-box-right-column">
+							<form class="ui reply form reply-with-ratings" data-icon="../img/avatar/large/steve.jpg" data-user-name="Steve">
+								<div class="field">
+									<textarea name="input-comment"></textarea>
+								</div>
+<div class="rating-box">
+  <div class="inline fields">
+    <label>How do you rate the quality of the code?</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="rating" checked="checked" value="critical">
+        <label class="status-critical">Critical Issues</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="rating" value="minor">
+        <label class="status-minor">Minor Issues</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="rating" value="ready">
+        <label class="status-ready">Ready</label>
+      </div>
+    </div>
+  </div>
+</div>
+								<div class="ui blue labeled icon submit-button">
+									<i class="icon edit"></i> Add Reply
+								</div>
+							</form>
+							</div>
+							</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+<!-- row -->
+			</div>
+
+		</div>
+
+
+	</div>
+</body>
+</html>
